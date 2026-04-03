@@ -1,0 +1,28 @@
+{
+  "name": "idcesares-design-system",
+  "version": "1.1.0",
+  "description": "The Membrane Palette — a token-based design system where human warmth meets digital precision.",
+  "author": "Isaac D'Cesares",
+  "license": "MIT",
+  "homepage": "https://github.com/idcesares/idcesares-design-system",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idcesares/idcesares-design-system.git"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "css-custom-properties",
+    "membrane-palette",
+    "dark-mode",
+    "accessibility",
+    "wcag"
+  ],
+  "scripts": {
+    "dev": "serve . -l $PORT"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
+}
