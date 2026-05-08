@@ -7,10 +7,16 @@ colors:
   terracotta: "#B35530"
   terracotta-light: "#D4724F"
   terracotta-dark: "#944425"
+  terracotta-10: "rgba(179, 85, 48, 0.10)"
+  terracotta-20: "rgba(179, 85, 48, 0.20)"
   # Primary (Digital)
   teal: "#1B756D"
   teal-light: "#3AAFA8"
   teal-dark: "#145C56"
+  teal-08: "rgba(27, 117, 109, 0.08)"
+  teal-10: "rgba(27, 117, 109, 0.10)"
+  teal-12: "rgba(27, 117, 109, 0.12)"
+  teal-20: "rgba(27, 117, 109, 0.20)"
   
   # Canvas
   cream: "#FAF6EE"
@@ -49,11 +55,26 @@ colors:
 
   border-default: "{colors.neutral-200}"
   border-emphasis: "{colors.neutral-300}"
+  overlay-bg: "rgba(26, 27, 31, 0.70)"
 
   success: "{colors.sage}"
   warning: "{colors.amber}"
   error: "#C44040"
   info: "{colors.teal}"
+
+gradients:
+  membrane: "linear-gradient(135deg, #B35530 0%, #1B756D 100%)"
+  warmth: "radial-gradient(ellipse 600px 300px at 15% 0%, rgba(179, 85, 48, 0.08) 0%, transparent 70%)"
+  depth: "linear-gradient(180deg, var(--color-charcoal) 0%, #12131A 100%)"
+  divider: "linear-gradient(90deg, transparent, var(--color-border-default), transparent)"
+  subtle: "linear-gradient(150deg, var(--color-bg-secondary) 8%, var(--color-bg-primary) 92%)"
+
+ambientGlows:
+  terracotta: "rgba(179, 85, 48, 0.09)"
+  teal: "rgba(27, 117, 109, 0.10)"
+  sage: "rgba(90, 138, 110, 0.08)"
+  focal: "rgba(179, 85, 48, 0.06)"
+  focal-loaded: "rgba(179, 85, 48, 0.10)"
 
 typography:
   fonts:
@@ -72,6 +93,11 @@ typography:
     small: "0.875rem"
     xs: "0.75rem"
     code: "clamp(0.875rem, 0.25vw + 0.8rem, 0.9375rem)"
+    sm: "{typography.sizes.small}"
+    base: "{typography.sizes.body}"
+    md: "{typography.sizes.h4}"
+    lg: "{typography.sizes.h3}"
+    xl: "{typography.sizes.h2}"
   
   lineHeights:
     display: "1.1"

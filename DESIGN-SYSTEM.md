@@ -66,6 +66,17 @@ This is not arbitrary. When a design element relates to the human side of the br
 | `--color-terracotta` | Terracotta | `#B35530` | `15, 58%, 44%` | **Primary brand color.** The human register made visible. Earth, hands, making, Brazilian clay. Used for primary CTAs, key highlights, the signature accent. *Adjusted for WCAG AA compliance.* |
 | `--color-teal` | Deep Teal | `#1B756D` | `174, 63%, 28%` | **Secondary brand color.** The digital register. Technology, depth, Rio's ocean. Used for secondary actions, links, code accents, digital-context elements. |
 
+#### Primary Opacity Tokens
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--color-terracotta-10` | `rgba(179, 85, 48, 0.10)` | Warm tint for tags, selection, subtle emphasis |
+| `--color-terracotta-20` | `rgba(179, 85, 48, 0.20)` | Stronger warm tint for hover/focus affordances |
+| `--color-teal-08` | `rgba(27, 117, 109, 0.08)` | Very subtle digital wash for page-level ambient backgrounds |
+| `--color-teal-10` | `rgba(27, 117, 109, 0.10)` | Default teal tint for tags and quiet UI states |
+| `--color-teal-12` | `rgba(27, 117, 109, 0.12)` | Slightly stronger teal tint for focal background glows |
+| `--color-teal-20` | `rgba(27, 117, 109, 0.20)` | Stronger teal tint for bars, selected states, and hover surfaces |
+
 #### Canvas Colors
 
 | Token | Name | Hex | HSL | Role |
@@ -112,6 +123,7 @@ This is not arbitrary. When a design element relates to the human side of the br
 | `--color-bg-tertiary` | `--neutral-200` | `#2E2E34` | Nested containers |
 | `--color-border-default` | `--neutral-200` | `#3D3842` | Default borders |
 | `--color-border-emphasis` | `--neutral-300` | `#5C564E` | Emphasized borders |
+| `--color-overlay-bg` | `rgba(26, 27, 31, 0.70)` | `rgba(26, 27, 31, 0.70)` | Scrims, navigation overlays, image readability layers |
 | `--color-success` | `--color-sage` | `#6FBF8A` | Success states |
 | `--color-warning` | `--color-amber` | `#E8B44A` | Warning states |
 | `--color-error` | `#C44040` | `#E86060` | Error states |
@@ -136,6 +148,20 @@ Gradients are used intentionally to represent the "membrane" — the translation
 | `--gradient-membrane` | `linear-gradient(135deg, #B35530 0%, #1B756D 100%)` | The brand's signature gradient. Human → Digital. Used on hero sections, key visual moments, not on small UI elements. |
 | `--gradient-warmth` | `radial-gradient(ellipse at 15% 0%, rgba(179,85,48,0.08) 0%, transparent 70%)` | Subtle warm glow applied to section backgrounds. Creates ambient warmth without being decorative. |
 | `--gradient-depth` | `linear-gradient(180deg, var(--color-charcoal) 0%, #12131A 100%)` | Dark mode depth. Used on hero backgrounds in dark mode. |
+| `--gradient-divider` | `linear-gradient(90deg, transparent, var(--color-border-default), transparent)` | Fading dividers between sections |
+| `--gradient-subtle` | `linear-gradient(150deg, var(--color-bg-secondary) 8%, var(--color-bg-primary) 92%)` | Quiet surface transition used by content cards and media frames |
+
+#### Ambient Glow Stop Colors
+
+These tokens provide the website's current page-level glow system without hard-coding rgba values in layouts.
+
+| Token | Light Mode | Dark Mode | Usage |
+|-------|------------|-----------|-------|
+| `--bg-glow-terracotta` | `rgba(179, 85, 48, 0.09)` | `rgba(179, 85, 48, 0.12)` | Warm ambient glow |
+| `--bg-glow-teal` | `rgba(27, 117, 109, 0.10)` | `rgba(58, 175, 168, 0.10)` | Digital ambient glow |
+| `--bg-glow-sage` | `rgba(90, 138, 110, 0.08)` | `rgba(58, 175, 168, 0.08)` | Supporting growth/calm glow |
+| `--bg-glow-focal` | `rgba(179, 85, 48, 0.06)` | `rgba(179, 85, 48, 0.08)` | Initial focal glow |
+| `--bg-glow-focal-loaded` | `rgba(179, 85, 48, 0.10)` | `rgba(179, 85, 48, 0.14)` | Loaded-state focal glow |
 
 ### 2.6 Code Block Colors
 
@@ -197,6 +223,18 @@ The scale uses a **1.250 ratio (Major Third)** — harmonious and readable witho
 | `--text-small` | 0.875rem | — | 0.875rem | 400 | Instrument Sans | Captions, metadata |
 | `--text-xs` | 0.75rem | — | 0.75rem | 500 | Instrument Sans | Labels, badges, overlines |
 | `--text-code` | 0.875rem | — | 0.9375rem | 400 | JetBrains Mono | Inline code, code blocks |
+
+#### Website Compatibility Aliases
+
+The website uses a small set of semantic size aliases in component CSS. They resolve to the canonical scale and are included in `tokens/design-tokens.css` for compatibility.
+
+| Alias | Resolves to |
+|-------|-------------|
+| `--text-sm` | `--text-small` |
+| `--text-base` | `--text-body` |
+| `--text-md` | `--text-h4` |
+| `--text-lg` | `--text-h3` |
+| `--text-xl` | `--text-h2` |
 
 ### 3.4 Line Height & Letter Spacing
 
@@ -763,7 +801,9 @@ Dark mode is not an afterthought — it is an equal expression of the brand. The
 1. **Accent colors lighten by ~15% in dark mode** to maintain WCAG AA contrast ratios.
 2. **Shadows shift from opacity-based to glow-based** in dark mode. Cards get a subtle border instead of a drop shadow.
 3. **The membrane gradient remains the same direction** (terracotta → teal) but both endpoints lighten.
-4. **Images receive a subtle `brightness(0.92)` filter** in dark mode to prevent them from blowing out against dark surfaces.
+4. **Ambient glow stop-colors shift brighter** so background texture remains perceptible on dark surfaces.
+5. **Manual toggles support both `[data-theme="dark"]` and `:root.theme-dark`.** The class exists for compatibility with the current website theme script.
+6. **Images receive a subtle `brightness(0.92)` filter** in dark mode to prevent them from blowing out against dark surfaces.
 
 ---
 

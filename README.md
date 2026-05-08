@@ -97,9 +97,15 @@ All tokens live in a single CSS file using custom properties on `:root`. Dark mo
 ```css
 /* The Human Register */
 --color-terracotta: #B35530;     /* Primary brand. Earth, hands, making. */
+--color-terracotta-10: rgba(179, 85, 48, 0.10);
+--color-terracotta-20: rgba(179, 85, 48, 0.20);
 
 /* The Digital Register */
 --color-teal: #1B756D;           /* Secondary brand. Technology, depth, ocean. */
+--color-teal-08: rgba(27, 117, 109, 0.08);
+--color-teal-10: rgba(27, 117, 109, 0.10);
+--color-teal-12: rgba(27, 117, 109, 0.12);
+--color-teal-20: rgba(27, 117, 109, 0.20);
 
 /* Canvas */
 --color-cream: #FAF6EE;          /* Light canvas. Never pure white. */
@@ -111,7 +117,7 @@ All tokens live in a single CSS file using custom properties on `:root`. Dark mo
 --color-sage: #5A8A6E;           /* Growth. Education, nature. */
 ```
 
-Plus a 10-step warm-tinted neutral scale (`--color-neutral-50` through `--color-neutral-900`), semantic tokens, gradients, and syntax highlighting colors.
+Plus a 10-step warm-tinted neutral scale (`--color-neutral-50` through `--color-neutral-900`), semantic tokens, overlay colors, ambient glow stop-colors, gradients, and syntax highlighting colors.
 
 ### Typography — 3 registers
 
@@ -122,6 +128,7 @@ Plus a 10-step warm-tinted neutral scale (`--color-neutral-50` through `--color-
 | **JetBrains Mono** | Builder | Code blocks, technical content |
 
 Fluid type scale from `--text-xs` (0.75rem) to `--text-display` (clamp up to 3.75rem).
+Website compatibility aliases (`--text-sm`, `--text-base`, `--text-md`, `--text-lg`, `--text-xl`) map back to the canonical type scale.
 
 ### Spacing, Shadows, Motion
 
@@ -149,8 +156,9 @@ Fully supported through two mechanisms:
 /* Automatic — follows system preference */
 @media (prefers-color-scheme: dark) { ... }
 
-/* Manual — toggle via data attribute */
+/* Manual — toggle via data attribute or class */
 document.documentElement.setAttribute('data-theme', 'dark');
+document.documentElement.classList.add('theme-dark');
 ```
 
 Accent colors lighten slightly in dark mode to maintain WCAG AA contrast ratios. Shadows shift from warm-tinted to true dark. The showcase includes a working theme toggle.

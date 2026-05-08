@@ -325,6 +325,25 @@
     .gradient-strip--membrane { background: var(--gradient-membrane); }
     .gradient-strip--warmth   { background: var(--gradient-warmth), var(--color-bg-secondary); }
     .gradient-strip--depth    { background: var(--gradient-depth); }
+    .gradient-strip--subtle   { background: var(--gradient-subtle); }
+
+    .ambient-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+
+    .ambient-sample {
+      min-height: 120px;
+      border-radius: var(--radius-lg);
+      border: var(--border-default);
+      background-color: var(--color-bg-secondary);
+      background-image: radial-gradient(140px 90px at 50% 35%, var(--glow), transparent 70%);
+      padding: var(--space-4);
+      display: flex;
+      align-items: flex-end;
+    }
 
     .gradient-label {
       font-family: var(--font-mono);
@@ -994,6 +1013,42 @@
           </div>
         </div>
 
+        <h3 class="type-h3" style="margin-bottom: var(--space-6);">Opacity & Surface Tokens</h3>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch__color" style="background: var(--color-terracotta-10);"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Terracotta 10</div>
+              <div class="swatch__hex">rgba(179, 85, 48, 0.10)</div>
+              <div class="swatch__token">--color-terracotta-10</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: var(--color-teal-08);"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Teal 08</div>
+              <div class="swatch__hex">rgba(27, 117, 109, 0.08)</div>
+              <div class="swatch__token">--color-teal-08</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: var(--color-teal-12);"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Teal 12</div>
+              <div class="swatch__hex">rgba(27, 117, 109, 0.12)</div>
+              <div class="swatch__token">--color-teal-12</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: var(--color-overlay-bg);"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Overlay Background</div>
+              <div class="swatch__hex">rgba(26, 27, 31, 0.70)</div>
+              <div class="swatch__token">--color-overlay-bg</div>
+            </div>
+          </div>
+        </div>
+
         <h3 class="type-h3" style="margin-bottom: var(--space-6);">Accent Colors</h3>
         <div class="swatch-grid">
           <div class="swatch">
@@ -1044,6 +1099,24 @@
         <p class="gradient-label">--gradient-warmth · Ambient warm glow for section backgrounds</p>
         <div class="gradient-strip gradient-strip--depth"></div>
         <p class="gradient-label">--gradient-depth · Dark mode hero depth</p>
+        <div class="gradient-strip gradient-strip--subtle"></div>
+        <p class="gradient-label">--gradient-subtle · Quiet surface transition from the website content system</p>
+
+        <h3 class="type-h3" style="margin-bottom: var(--space-6);">Ambient Glow Stops</h3>
+        <div class="ambient-grid">
+          <div class="ambient-sample" style="--glow: var(--bg-glow-terracotta);">
+            <p class="gradient-label" style="margin-bottom: 0;">--bg-glow-terracotta</p>
+          </div>
+          <div class="ambient-sample" style="--glow: var(--bg-glow-teal);">
+            <p class="gradient-label" style="margin-bottom: 0;">--bg-glow-teal</p>
+          </div>
+          <div class="ambient-sample" style="--glow: var(--bg-glow-sage);">
+            <p class="gradient-label" style="margin-bottom: 0;">--bg-glow-sage</p>
+          </div>
+          <div class="ambient-sample" style="--glow: var(--bg-glow-focal-loaded);">
+            <p class="gradient-label" style="margin-bottom: 0;">--bg-glow-focal-loaded</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1114,6 +1187,7 @@
           <div class="type-sample__meta">
             <span class="type-sample__tag">Small · Instrument Sans 400</span>
             <span class="type-sample__tag">--text-small</span>
+            <span class="type-sample__tag">alias: --text-sm</span>
           </div>
           <p class="type-small">Published March 2026 · Rio de Janeiro, Brazil</p>
         </div>

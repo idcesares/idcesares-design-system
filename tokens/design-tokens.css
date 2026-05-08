@@ -22,7 +22,9 @@
   --color-teal:             #1B756D;
   --color-teal-light:       #3AAFA8;
   --color-teal-dark:        #145C56;
+  --color-teal-08:          rgba(27, 117, 109, 0.08);
   --color-teal-10:          rgba(27, 117, 109, 0.10);
+  --color-teal-12:          rgba(27, 117, 109, 0.12);
   --color-teal-20:          rgba(27, 117, 109, 0.20);
 
   /* Canvas */
@@ -74,6 +76,8 @@
   --color-border-default:   var(--color-neutral-200);
   --color-border-emphasis:  var(--color-neutral-300);
 
+  --color-overlay-bg:       rgba(26, 27, 31, 0.70);
+
   --color-success:          var(--color-sage);
   --color-warning:          var(--color-amber);
   --color-error:            #C44040;
@@ -87,6 +91,14 @@
   --gradient-warmth:        radial-gradient(ellipse 600px 300px at 15% 0%, rgba(179, 85, 48, 0.08) 0%, transparent 70%);
   --gradient-depth:         linear-gradient(180deg, var(--color-charcoal) 0%, #12131A 100%);
   --gradient-divider:       linear-gradient(90deg, transparent, var(--color-border-default), transparent);
+  --gradient-subtle:        linear-gradient(150deg, var(--color-bg-secondary) 8%, var(--color-bg-primary) 92%);
+
+  /* Ambient glow stop-colors (for layout background radial gradients) */
+  --bg-glow-terracotta:     rgba(179, 85, 48, 0.09);
+  --bg-glow-teal:           rgba(27, 117, 109, 0.10);
+  --bg-glow-sage:           rgba(90, 138, 110, 0.08);
+  --bg-glow-focal:          rgba(179, 85, 48, 0.06);
+  --bg-glow-focal-loaded:   rgba(179, 85, 48, 0.10);
 
   /* --------------------------------------------------------
      5. COLORS — Code Block (always dark)
@@ -123,6 +135,11 @@
   --text-small:             0.875rem;
   --text-xs:                0.75rem;
   --text-code:              clamp(0.875rem, 0.25vw + 0.8rem, 0.9375rem);
+  --text-sm:                var(--text-small);
+  --text-base:              var(--text-body);
+  --text-md:                var(--text-h4);
+  --text-lg:                var(--text-h3);
+  --text-xl:                var(--text-h2);
 
   /* --------------------------------------------------------
      8. TYPOGRAPHY — Line Height
@@ -323,11 +340,18 @@
     --shadow-lg:              0 12px 32px rgba(0, 0, 0, 0.30),
                               0 4px 8px rgba(0, 0, 0, 0.20);
     --shadow-glow-warm:       0 0 24px rgba(212, 114, 79, 0.20);
+
+    --bg-glow-terracotta:     rgba(179, 85, 48, 0.12);
+    --bg-glow-teal:           rgba(58, 175, 168, 0.10);
+    --bg-glow-sage:           rgba(58, 175, 168, 0.08);
+    --bg-glow-focal:          rgba(179, 85, 48, 0.08);
+    --bg-glow-focal-loaded:   rgba(179, 85, 48, 0.14);
   }
 }
 
 /* Manual dark mode (for toggle support) */
-[data-theme="dark"] {
+[data-theme="dark"],
+:root.theme-dark {
   --color-terracotta:       var(--color-terracotta-light);
   --color-text-primary:     #F0EBE1;
   --color-text-secondary:   #A39D93;
@@ -353,6 +377,12 @@
   --shadow-lg:              0 12px 32px rgba(0, 0, 0, 0.30),
                             0 4px 8px rgba(0, 0, 0, 0.20);
   --shadow-glow-warm:       0 0 24px rgba(212, 114, 79, 0.20);
+
+  --bg-glow-terracotta:     rgba(179, 85, 48, 0.12);
+  --bg-glow-teal:           rgba(58, 175, 168, 0.10);
+  --bg-glow-sage:           rgba(58, 175, 168, 0.08);
+  --bg-glow-focal:          rgba(179, 85, 48, 0.08);
+  --bg-glow-focal-loaded:   rgba(179, 85, 48, 0.14);
 }
 
 /* ===========================================================
