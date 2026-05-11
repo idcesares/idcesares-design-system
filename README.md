@@ -88,29 +88,24 @@ Then open `localhost:3456` in your browser.
 
 **3. Deploy the showcase on Cloudflare Pages**
 
-Cloudflare Pages should use:
+Cloudflare should use:
 
 ```bash
 npm run build
 ```
 
-with `dist` as the build output directory. The build copies `showcase/index.html` to `dist/index.html`, so the deployed root URL loads the showcase directly.
+with `npm run deploy` as the deploy command when the dashboard requires one. The build copies `showcase/index.html` to `dist/index.html`, and `wrangler.toml` points Wrangler static assets at `dist`.
 
 The generated output also includes `robots.txt` and `sitemap.xml` for the canonical `https://membrane-palette.dcesares.dev/` deployment.
 
-If Cloudflare asks for a deploy command instead of a build command, use either:
+Use these dashboard values:
 
-```bash
-npm run deploy
+```text
+Build command: npm run build
+Deploy command: npm run deploy
+Non-production deploy command: npm run deploy
+Path: /
 ```
-
-or:
-
-```bash
-npm run deploy:pages
-```
-
-Do not use `npx wrangler deploy` for this project. That command deploys a Worker and expects a Worker entrypoint; this repository is a static Cloudflare Pages site.
 
 <br>
 
