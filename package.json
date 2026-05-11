@@ -20,6 +20,8 @@
   ],
   "scripts": {
     "build": "node scripts/build-cloudflare-pages.mjs",
+    "deploy": "npm run deploy:pages",
+    "deploy:pages": "npm run build && npx wrangler pages deploy dist --project-name idcesares-design-system",
     "dev": "npm run build && serve dist -l 3456",
     "preview": "npm run build && serve dist -l 3456"
   },

@@ -98,6 +98,20 @@ with `dist` as the build output directory. The build copies `showcase/index.html
 
 The generated output also includes `robots.txt` and `sitemap.xml` for the canonical `https://membrane-palette.dcesares.dev/` deployment.
 
+If Cloudflare asks for a deploy command instead of a build command, use either:
+
+```bash
+npm run deploy
+```
+
+or:
+
+```bash
+npm run deploy:pages
+```
+
+Do not use `npx wrangler deploy` for this project. That command deploys a Worker and expects a Worker entrypoint; this repository is a static Cloudflare Pages site.
+
 <br>
 
 ## Token Architecture
