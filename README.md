@@ -61,7 +61,7 @@ This is a **token-based design system** — not a component library. It provides
 | [`DESIGN-SYSTEM.md`](DESIGN-SYSTEM.md) | **Authoritative specification.** 15 sections covering colors, typography, spacing, components, dark mode, accessibility, and naming conventions. |
 | [`showcase/index.html`](showcase/index.html) | **Living reference.** A static page demonstrating every token and component pattern. |
 
-There is no build process, no TypeScript, no framework dependency. The intended model: **import the tokens, build components following the spec.**
+There is no TypeScript or framework dependency. The intended model: **import the tokens, build components following the spec.**
 
 <br>
 
@@ -84,7 +84,19 @@ npm install
 npm run dev
 ```
 
-Then open `localhost:3456/showcase` in your browser.
+Then open `localhost:3456` in your browser.
+
+**3. Deploy the showcase on Cloudflare Pages**
+
+Cloudflare Pages should use:
+
+```bash
+npm run build
+```
+
+with `dist` as the build output directory. The build copies `showcase/index.html` to `dist/index.html`, so the deployed root URL loads the showcase directly.
+
+The generated output also includes `robots.txt` and `sitemap.xml` for the canonical `https://membrane-palette.dcesares.dev/` deployment.
 
 <br>
 

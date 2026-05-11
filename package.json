@@ -19,7 +19,9 @@
     "wcag"
   ],
   "scripts": {
-    "dev": "serve . -l $PORT"
+    "build": "node scripts/build-cloudflare-pages.mjs",
+    "dev": "npm run build && serve dist -l 3456",
+    "preview": "npm run build && serve dist -l 3456"
   },
   "type": "commonjs",
   "devDependencies": {
